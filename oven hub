@@ -59,9 +59,6 @@ _G.infinjump = not _G.infinjump
 if _G.infinJumpStarted == nil then
 	--Ensures this only runs once to save resources
 	_G.infinJumpStarted = true
-	
-	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="Oven hub"; Text="Infinite Jump Activated!"; Duration=5;})
 
 	--The actual infinite jump
 	local plr = game:GetService('Players').LocalPlayer
@@ -211,6 +208,12 @@ Fly()
 local Button = MainTab:CreateButton({
    Name = "Noclip Tool",
    Callback = function()
+            Rayfield:Notify({
+   Title = "NoClip Activated",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
           local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local StarterGui = game:GetService("StarterGui")
@@ -318,6 +321,12 @@ local Section = AimbotTab:CreateSection("Aimlock")
 local Button = AimbotTab:CreateButton({
    Name = "Aimlock",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Aimlock activated",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
      PLAYER  = game.Players.LocalPlayer
 MOUSE   = PLAYER:GetMouse()
 CC      = game.Workspace.CurrentCamera
@@ -559,6 +568,12 @@ until ESP_ENABLED == false
 local Button = AimbotTab:CreateButton({
    Name = "Mobile Aimbot",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Mobile Aimbot Activated",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet("https://raw.githubusercontent.com/sdfesdfsedf/srgtergasdfs/main/wwwwwww", true))()
    -- The function that takes place when the button is pressed
    end,
@@ -571,6 +586,12 @@ local Section = VisualsTab:CreateSection("ESP")
 local Button = VisualsTab:CreateButton({
    Name = "ESP",
    Callback = function()
+            Rayfield:Notify({
+   Title = "ESP Activated",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
@@ -614,6 +635,12 @@ local Section = OtherTab:CreateSection("Main")
 local Button = OtherTab:CreateButton({
    Name = "Anti AFK",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Anti AFK Activated",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             local Player = game.Players.LocalPlayer
 local character = Player.Character or Player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -635,8 +662,13 @@ end
 local Button = OtherTab:CreateButton({
    Name = "No Textures",
    Callback = function()
-            local Players = game:GetService("Players")
-local Lighting = game:GetService("Lighting")
+            Rayfield:Notify({
+   Title = "No Textures Activated",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
+            local Lighting = game:GetService("Lighting")
 local Workspace = game:GetService("Workspace")
 
 -- Store original settings
@@ -674,43 +706,27 @@ local function disableLowGraphics()
     for _, v in pairs(Workspace:GetDescendants()) do
         if v:IsA("Part") or v:IsA("MeshPart") then
             v.Material = Enum.Material.Plastic -- Change back to original material if known 
-            v.Reflectance = originalSettings.Reflectance or 0.5 -- Adjust as necessary 
+            v.Reflectance = 0.5 -- Adjust as necessary
         elseif v:IsA("Decal") then
             v.Transparency = 0 -- Make decals visible again 
         end
     end
 
     -- Restore lighting effects 
-    Lighting.GlobalShadows = originalSettings.GlobalShadows 
-    Lighting.FogEnd = originalSettings.FogEnd 
+    Lighting.GlobalShadows = originalSettings.GlobalShadows
+    Lighting.FogEnd = originalSettings.FogEnd
 
     -- Restore quality level 
-    settings().Rendering.QualityLevel = originalSettings.QualityLevel 
+    settings().Rendering.QualityLevel = originalSettings.QualityLevel
 
     print("Low graphics mode disabled.")
 end
 
--- Button GUI setup (optional)
-local ScreenGui = Instance.new("ScreenGui", Players.LocalPlayer:WaitForChild("PlayerGui"))
-local ToggleButton = Instance.new("TextButton", ScreenGui)
-ToggleButton.Size = UDim2.new(0, 200, 0, 50)
-ToggleButton.Position = UDim2.new(0.5, -100, 0, 20)
-ToggleButton.Text = "Toggle Low Graphics"
+-- Example usage: Enable low graphics at script start
+enableLowGraphics()
 
--- Variable to track state 
-local lowGraphicsEnabled = false 
+-- To disable low graphics, call `disableLowGraphics()` when needed.
 
--- Button click event 
-ToggleButton.MouseButton1Click:Connect(function()
-    lowGraphicsEnabled = not lowGraphicsEnabled 
-    if lowGraphicsEnabled then 
-        enableLowGraphics() 
-        ToggleButton.Text = "Disable Low Graphics" 
-    else 
-        disableLowGraphics() 
-        ToggleButton.Text = "Enable Low Graphics" 
-    end 
-end)
    -- The function that takes place when the button is pressed
    end,
 })
@@ -730,6 +746,12 @@ local Slider = OtherTab:CreateSlider({
 local Button = OtherTab:CreateButton({
    Name = "Stroke dick(R15)",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Stroke dick(R15) Activated",
+   Content = "Enjoy(u gay for this)",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
    -- The function that takes place when the button is pressed
    end,
@@ -738,6 +760,12 @@ local Button = OtherTab:CreateButton({
 local Button = OtherTab:CreateButton({
    Name = "Stroke dick(R6)",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Stroke dick(R6)",
+   Content = "Enjoy(u gay for this)",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))()
    -- The function that takes place when the button is pressed
    end,
@@ -792,6 +820,12 @@ startAutoFarm()
 local Button = OtherTab:CreateButton({
    Name = "Enclosed GUI",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Enclosed GUI Loaded",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet('https://raw.githubusercontent.com/Pvpahh/enclosed/main/enclosed'))()
    -- The function that takes place when the button is pressed
    end,
@@ -802,6 +836,12 @@ local Section = OtherTab:CreateSection("Other Games")
 local Button = OtherTab:CreateButton({
    Name = "Prison Ware Gui",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Prison Ware Gui Loaded",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))();
    -- The function that takes place when the button is pressed
    end,
@@ -810,6 +850,12 @@ local Button = OtherTab:CreateButton({
 local Button = OtherTab:CreateButton({
    Name = "Starry Tower of Hell",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Starry Tower of Hell Loaded",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
           getgenv().ignoreGameCheck = false;
 loadstring(game:HttpGet("https://luau.tech/build"))()  
    -- The function that takes place when the button is pressed
@@ -819,6 +865,12 @@ loadstring(game:HttpGet("https://luau.tech/build"))()
 local Button = OtherTab:CreateButton({
    Name = "BloxFruits Gui",
    Callback = function()
+            Rayfield:Notify({
+   Title = "BloxFruits Gui Loaded",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/BloxFruitsButGood"))()
    -- The function that takes place when the button is pressed
    end,
@@ -827,7 +879,27 @@ local Button = OtherTab:CreateButton({
 local Button = OtherTab:CreateButton({
    Name = "Owl hub",
    Callback = function()
+            Rayfield:Notify({
+   Title = "Owl hub loaded",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Cri..."))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = OtherTab:CreateButton({
+   Name = "Inf Yeild",
+   Callback = function()
+            Rayfield:Notify({
+   Title = "Inf Yeild Loaded",
+   Content = "Enjoy",
+   Duration = 4,
+   Image = nil,
+})
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
    -- The function that takes place when the button is pressed
    end,
 })
